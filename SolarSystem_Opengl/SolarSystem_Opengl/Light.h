@@ -5,6 +5,7 @@
 class Light
 {
 public:
+	Light();
 	Light(GLfloat light_position[],GLfloat light_ambient[],GLfloat light_diffuse[],GLfloat light_specular[]);
 	~Light(void);
 

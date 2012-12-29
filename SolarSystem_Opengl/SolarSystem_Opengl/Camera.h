@@ -11,6 +11,11 @@ public:
 
 	void SetCamera();
 
+	Point getEye();
+	void setEye(Point eye);
+	Point getCentery();
+	void setCentery(Point centery);
+
 private:
 	Point m_eye;
 	Point m_centery;

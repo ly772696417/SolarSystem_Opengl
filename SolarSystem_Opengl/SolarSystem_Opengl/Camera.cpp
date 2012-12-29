@@ -1,11 +1,10 @@
 #include "Camera.h"
 
 Camera::Camera(){
-	
-	m_eye.Posx = 5.0f;
+	m_eye.Posx = 0.1f;
 	m_eye.Posy = 0.0f;
-	m_eye.Posz = -20.0f;
-
+	m_eye.Posz = 50.0f;
+	
 	m_centery.Posx = 0.0f;
 	m_centery.Posy = 0.0f;
 	m_centery.Posz = 0.0f;
@@ -40,4 +39,19 @@ void Camera::SetCamera(){
 					m_up.vectorX,m_up.vectorY,m_up.vectorZ);
 }
 
+Point Camera::getEye(){
+	return m_eye;
+}
+
+void Camera::setEye(Point eye){
+	m_eye = eye;
+}
+
+Point Camera::getCentery(){
+	return m_centery;
+}
+
+void Camera::setCentery(Point centery){
+	m_centery = centery;
+}
 

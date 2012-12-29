@@ -2,22 +2,17 @@
 
 #include "header.h"
 
-#define BMP_Header_Length 54
-
-class Texture
+typedef struct													// 建立一个结构体
 {
-public:
-	Texture(char *file_name);
-	~Texture();
+	GLubyte	*imageData;											// 图像数据 (最高32bit)
+	GLuint	bpp;												// 每一象素的图像颜色深度
+	GLuint	width;												// 图像宽度
+	GLuint	height;												// 图像高度
+	GLuint	texID;												// 纹理ID
+} TextureTga;
 
-	int Power_of_two(int n);
-	void Load_texture();
-	void SetTexture();
+// 载入BMP,JPG,GIF等文件
+BOOL BuildTexture(char *szPathName, GLuint &texid);
 
-private:
-	char *m_file_name;
-	GLuint m_texture_ID;
-};
-
-
-
+// 载入TGA文件
+BOOL BuildTexture(char *filename, TextureTga *texture);
